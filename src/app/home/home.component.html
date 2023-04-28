@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <h1>Soduku</h1>
+
+  <div class="board">
+    <div *ngFor="let marker of markers" class="marker">
+      <div class="value" *ngIf="marker.value">{{marker.value}}</div>
+      <div class="hints">
+        <div class="hint-1" *ngIf="!row[marker.row][0] && !col[marker.col][0] && !box[marker.box][0]"></div>
+        <div class="hint-2" *ngIf="!row[marker.row][1] && !col[marker.col][1] && !box[marker.box][1]"></div>
+        <div class="hint-3" *ngIf="!row[marker.row][2] && !col[marker.col][2] && !box[marker.box][2]"></div>
+        <div class="hint-4" *ngIf="!row[marker.row][3] && !col[marker.col][3] && !box[marker.box][3]"></div>
+        <div class="hint-5" *ngIf="!row[marker.row][4] && !col[marker.col][4] && !box[marker.box][4]"></div>
+        <div class="hint-6" *ngIf="!row[marker.row][5] && !col[marker.col][5] && !box[marker.box][5]"></div>
+        <div class="hint-7" *ngIf="!row[marker.row][6] && !col[marker.col][6] && !box[marker.box][6]"></div>
+        <div class="hint-8" *ngIf="!row[marker.row][7] && !col[marker.col][7] && !box[marker.box][7]"></div>
+        <div class="hint-9" *ngIf="!row[marker.row][8] && !col[marker.col][8] && !box[marker.box][8]"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+$primary: #BB2670;
+$secondary: #62798e;
+$success: #198754;
+$info: #099dff;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+$lighter: #fafafa;
+$softgray: #ced4da;
+
+$border-radius: 0.2rem;
+$border-radius-sm: 0.2rem;
+$border-radius-lg: 0.2rem;
+$border-radius-pill: 50rem;
+$input-btn-padding-x: 1rem;
+
+$table-hover-bg: $lighter;
+$input-group-addon-bg: white;
+$border-radius: 0.1rem;
+
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+body,
+html {
+  min-height: 100%;
+  hyphens: auto;
+}
+
+.modal {
+  --bs-modal-header-padding: 0.5rem 1rem;
+}
+
+::selection {
+  background-color: $softgray;
+  color: $dark;
+}
+
+.card {
+  background-color: white;
+  border: 0;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1rem;
+}
