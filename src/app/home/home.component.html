@@ -1,20 +1,183 @@
-<div class="container text-center">
-  <h1>Soduku</h1>
+<div class="text-center">
+  <h1>Sudoku</h1>
 
-  <div class="board">
-    <div *ngFor="let marker of markers" class="marker">
-      <div class="value" *ngIf="marker.value">{{marker.value}}</div>
-      <div class="hints">
-        <div class="hint-1" *ngIf="!row[marker.row][0] && !col[marker.col][0] && !box[marker.box][0]"></div>
-        <div class="hint-2" *ngIf="!row[marker.row][1] && !col[marker.col][1] && !box[marker.box][1]"></div>
-        <div class="hint-3" *ngIf="!row[marker.row][2] && !col[marker.col][2] && !box[marker.box][2]"></div>
-        <div class="hint-4" *ngIf="!row[marker.row][3] && !col[marker.col][3] && !box[marker.box][3]"></div>
-        <div class="hint-5" *ngIf="!row[marker.row][4] && !col[marker.col][4] && !box[marker.box][4]"></div>
-        <div class="hint-6" *ngIf="!row[marker.row][5] && !col[marker.col][5] && !box[marker.box][5]"></div>
-        <div class="hint-7" *ngIf="!row[marker.row][6] && !col[marker.col][6] && !box[marker.box][6]"></div>
-        <div class="hint-8" *ngIf="!row[marker.row][7] && !col[marker.col][7] && !box[marker.box][7]"></div>
-        <div class="hint-9" *ngIf="!row[marker.row][8] && !col[marker.col][8] && !box[marker.box][8]"></div>
+  <div class="board" *ngIf="!selectedMarker">
+    <div
+      *ngFor="let marker of markers"
+      class="marker"
+      (click)="selectMarker(marker)"
+      [ngClass]="{
+        'border-b': marker.row === 2 || marker.row === 5,
+        'border-r': marker.col === 2 || marker.col === 5
+      }"
+    >
+      <div class="value" *ngIf="marker.value">{{ marker.value }}</div>
+      <div class="hints" *ngIf="!marker.value">
+        <div
+          class="hint-1"
+          *ngIf="
+            !row[marker.row][0] && !col[marker.col][0] && !box[marker.box][0]
+          "
+        ></div>
+        <div
+          class="hint-2"
+          *ngIf="
+            !row[marker.row][1] && !col[marker.col][1] && !box[marker.box][1]
+          "
+        ></div>
+        <div
+          class="hint-3"
+          *ngIf="
+            !row[marker.row][2] && !col[marker.col][2] && !box[marker.box][2]
+          "
+        ></div>
+        <div
+          class="hint-4"
+          *ngIf="
+            !row[marker.row][3] && !col[marker.col][3] && !box[marker.box][3]
+          "
+        ></div>
+        <div
+          class="hint-5"
+          *ngIf="
+            !row[marker.row][4] && !col[marker.col][4] && !box[marker.box][4]
+          "
+        ></div>
+        <div
+          class="hint-6"
+          *ngIf="
+            !row[marker.row][5] && !col[marker.col][5] && !box[marker.box][5]
+          "
+        ></div>
+        <div
+          class="hint-7"
+          *ngIf="
+            !row[marker.row][6] && !col[marker.col][6] && !box[marker.box][6]
+          "
+        ></div>
+        <div
+          class="hint-8"
+          *ngIf="
+            !row[marker.row][7] && !col[marker.col][7] && !box[marker.box][7]
+          "
+        ></div>
+        <div
+          class="hint-9"
+          *ngIf="
+            !row[marker.row][8] && !col[marker.col][8] && !box[marker.box][8]
+          "
+        ></div>
       </div>
     </div>
+  </div>
+  <div class="board" *ngIf="selectedMarker">
+    <div class="selects">
+      <div
+        class="select-1"
+        *ngIf="
+          !row[selectedMarker.row][0] &&
+          !col[selectedMarker.col][0] &&
+          !box[selectedMarker.box][0]
+        "
+        (click)="setMarkerValue(0)"
+      >
+        1
+      </div>
+      <div
+        class="select-2"
+        *ngIf="
+          !row[selectedMarker.row][1] &&
+          !col[selectedMarker.col][1] &&
+          !box[selectedMarker.box][1]
+        "
+        (click)="setMarkerValue(1)"
+      >
+        2
+      </div>
+      <div
+        class="select-3"
+        *ngIf="
+          !row[selectedMarker.row][2] &&
+          !col[selectedMarker.col][2] &&
+          !box[selectedMarker.box][2]
+        "
+        (click)="setMarkerValue(2)"
+      >
+        3
+      </div>
+      <div
+        class="select-4"
+        *ngIf="
+          !row[selectedMarker.row][3] &&
+          !col[selectedMarker.col][3] &&
+          !box[selectedMarker.box][3]
+        "
+        (click)="setMarkerValue(3)"
+      >
+        4
+      </div>
+      <div
+        class="select-5"
+        *ngIf="
+          !row[selectedMarker.row][4] &&
+          !col[selectedMarker.col][4] &&
+          !box[selectedMarker.box][4]
+        "
+        (click)="setMarkerValue(4)"
+      >
+        5
+      </div>
+      <div
+        class="select-6"
+        *ngIf="
+          !row[selectedMarker.row][5] &&
+          !col[selectedMarker.col][5] &&
+          !box[selectedMarker.box][5]
+        "
+        (click)="setMarkerValue(5)"
+      >
+        6
+      </div>
+      <div
+        class="select-7"
+        *ngIf="
+          !row[selectedMarker.row][6] &&
+          !col[selectedMarker.col][6] &&
+          !box[selectedMarker.box][6]
+        "
+        (click)="setMarkerValue(6)"
+      >
+        7
+      </div>
+      <div
+        class="select-8"
+        *ngIf="
+          !row[selectedMarker.row][7] &&
+          !col[selectedMarker.col][7] &&
+          !box[selectedMarker.box][7]
+        "
+        (click)="setMarkerValue(7)"
+      >
+        8
+      </div>
+      <div
+        class="select-9"
+        *ngIf="
+          !row[selectedMarker.row][8] &&
+          !col[selectedMarker.col][8] &&
+          !box[selectedMarker.box][8]
+        "
+        (click)="setMarkerValue(8)"
+      >
+        9
+      </div>
+    </div>
+  </div>
+  <div
+    class="close-select"
+    *ngIf="selectedMarker"
+    (click)="selectMarker(undefined)"
+  >
+    Close
   </div>
 </div>

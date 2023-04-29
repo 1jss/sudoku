@@ -1,6 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 
-const EmptyNumberList: boolean[] = [false, false, false, false, false, false, false, false, false];
+const EmptyNumberList: boolean[] = [
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+];
 
 interface Marker {
   row: number;
@@ -17,20 +27,33 @@ interface Marker {
 export class HomeComponent implements OnInit {
   constructor() {}
 
+  selectedMarker: Marker | undefined = undefined;
+  selectMarker(marker: Marker | undefined) {
+    this.selectedMarker = marker;
+  }
+
   row: boolean[][] = [];
   col: boolean[][] = [];
   box: boolean[][] = [];
   markers: Marker[] = [];
-  
-  setMarkerValue(marker: Marker, value: number) {
-    marker.value = value;
-    this.row[marker.row][value] = true;
-    this.col[marker.col][value] = true;
-    this.box[marker.box][value] = true;
+
+  setMarkerValue(value: number) {
+    if (!this.selectedMarker) {
+      return;
+    }
+    this.row[this.selectedMarker.row][value] = true;
+    this.col[this.selectedMarker.col][value] = true;
+    this.box[this.selectedMarker.box][value] = true;
+    this.markers = this.markers.map((marker) => {
+      if ( marker === this.selectedMarker ) {
+        return {...marker, value: value+1};
+      }
+      return marker;
+    });
+    this.selectedMarker = undefined;
   }
 
   ngOnInit(): void {
-
     for (let i = 0; i < 9; i++) {
       this.row.push(Array.from(EmptyNumberList));
       this.col.push(Array.from(EmptyNumberList));
@@ -38,8 +61,6 @@ export class HomeComponent implements OnInit {
       for (let j = 0; j < 9; j++) {
         const boxCol = Math.floor(i / 3);
         const boxRow = Math.floor(j / 3);
-        console.log("boxRow", boxRow)
-        console.log("boxCol", boxCol)
         const box = boxCol * 3 + boxRow;
         this.markers.push({
           row: i,
@@ -48,13 +69,5 @@ export class HomeComponent implements OnInit {
         });
       }
     }
-    this.box[2][1] = true;
-    this.box[2][2] = true;
-    this.box[2][3] = true;
-    this.box[1][2] = true;
-    this.row[1][2] = true;
-    this.col[2][2] = true;
-    console.log(this.markers);
-    console.log(this.box);
   }
 }

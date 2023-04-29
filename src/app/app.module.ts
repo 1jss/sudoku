@@ -8,7 +8,6 @@ registerLocaleData(swedishLocale, 'sv');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'sv' }
