@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="360" height="360" version="1.1" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect width="360" height="360" fill="#343a40"/>
+  <rect x="6" y="6" width="348" height="348" fill="#ced4da"/>
+  <path d="m6 6v114h114v-114zm117 0v114h114v-114zm117 0v114h114v-114zm-234 117v114h114v-114zm117 0v114h114v-114zm117 0v114h114v-114zm-234 117v114h114v-114zm117 0v114h114v-114zm117 0v114h114v-114z" fill="#fafafa"/>
+ </g>
+</svg>

@@ -4,33 +4,38 @@ $softgray: #ced4da;
 $dark: #343a40;
 $primary: #dfb38b;
 
-.board {
-  width: 362px;
-  height: 362px;
+.board, .number-board {
+  width: 360px;
+  height: 360px;
   margin: 0 auto;
-  position: relative;
-  background-color: $lighter;
-  border: 1px solid $dark;
+  padding-top: 6px;
+  padding-left: 6px;
+}
+
+.board {
+  background-image: url(../../assets/board.svg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 360px 360px;
+}
+
+.number-board {
+  background-image: url(../../assets/number-board.svg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 360px 360px;
 }
 
 .marker {
-  width: 40px;
-  height: 40px;
-  border: 1px solid $softgray;
+  width: 36px;
+  height: 36px;
+  margin-right: 3px;
+  margin-bottom: 3px;
   float: left;
-  background-color: $lighter;
-}
-
-.border-b {
-  border-bottom: 1px solid $dark;
-}
-
-.border-r {
-  border-right: 1px solid $dark;
 }
 
 .value {
-  line-height: 38px;
+  line-height: 36px;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
@@ -42,13 +47,25 @@ $primary: #dfb38b;
   line-height: 38px;
 }
 
-.hints, .selects {
+.hints {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   width: 100%;
   height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   cursor: pointer;
+}
+
+.selects {
+  width: 348px;
+  height: 348px;
+  display: grid;
+  grid-template-columns: 114px 114px 114px;
+  grid-template-rows: 114px 114px 114px;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+  cursor: pointer;
+
 }
  
 .hint-1, .hint-2, .hint-3, .hint-4, .hint-5, .hint-6, .hint-7, .hint-8, .hint-9 {
@@ -60,10 +77,9 @@ $primary: #dfb38b;
 }
 
 .select-1, .select-2, .select-3, .select-4, .select-5, .select-6, .select-7, .select-8, .select-9 {
-  width: 120px;
-  height: 120px;
-  background-color: $lighter;
-  line-height: 120px;
+  width: 114px;
+  height: 114px;
+  line-height: 114px;
   text-align: center;
   font-size: 72px;
   font-weight: bold;

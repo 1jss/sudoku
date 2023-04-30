@@ -5,10 +5,6 @@
     <div
       *ngFor="let marker of markers"
       class="marker"
-      [ngClass]="{
-        'border-b': marker.row === 2 || marker.row === 5,
-        'border-r': marker.col === 2 || marker.col === 5
-      }"
     >
       <div class="value" *ngIf="marker.value">{{ marker.value }}</div>
       <div class="hints" *ngIf="!marker.value" (click)="selectMarker(marker)"
@@ -70,7 +66,7 @@
       </div>
     </div>
   </div>
-  <div class="board" *ngIf="selectedMarker">
+  <div class="number-board" *ngIf="selectedMarker">
     <div class="selects">
       <div
         class="select-1"
