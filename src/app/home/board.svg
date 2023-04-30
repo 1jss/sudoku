@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="360" height="360" version="1.1" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect width="360" height="360" fill="#343a40"/>
+  <rect x="3" y="3" width="354" height="354" fill="#fafafa"/>
+  <path d="m40 3v37h-37v3h37v36h-37v3h37v77h-37v3h37v36h-37v3h37v77h-37v3h37v36h-37v3h37v37h3v-37h36v37h3v-37h77v37h3v-37h36v37h3v-37h77v37h3v-37h36v37h3v-37h37v-3h-37v-36h37v-3h-37v-77h37v-3h-37v-36h37v-3h-37v-77h37v-3h-37v-36h37v-3h-37v-37h-3v37h-36v-37h-3v37h-77v-37h-3v37h-36v-37h-3v37h-77v-37h-3v37h-36v-37h-3zm3 40h36v36h-36v-36zm39 0h77v36h-77v-36zm80 0h36v36h-36v-36zm39 0h77v36h-77v-36zm80 0h36v36h-36v-36zm-238 39h36v77h-36v-77zm39 0h77v77h-77v-77zm80 0h36v77h-36v-77zm39 0h77v77h-77v-77zm80 0h36v77h-36v-77zm-238 80h36v36h-36v-36zm39 0h77v36h-77v-36zm80 0h36v36h-36v-36zm39 0h77v36h-77v-36zm80 0h36v36h-36v-36zm-238 39h36v77h-36v-77zm39 0h77v77h-77v-77zm80 0h36v77h-36v-77zm39 0h77v77h-77v-77zm80 0h36v77h-36v-77zm-238 80h36v36h-36v-36zm39 0h77v36h-77v-36zm80 0h36v36h-36v-36zm39 0h77v36h-77v-36zm80 0h36v36h-36v-36z" fill="#ced4da"/>
+  <path d="m119 3v116h-116v3h116v116h-116v3h116v116h3v-116h116v116h3v-116h116v-3h-116v-116h116v-3h-116v-116h-3v116h-116v-116h-3zm3 119h116v116h-116v-116z" fill="#343a40"/>
+ </g>
+</svg>
