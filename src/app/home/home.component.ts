@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 const EmptyNumberList: boolean[] = [
   false,
@@ -23,6 +24,8 @@ interface Marker {
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class HomeComponent implements OnInit {
   constructor() {}

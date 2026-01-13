@@ -11,13 +11,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AppComponent,
+    HomeComponent,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'sv' }
