@@ -4,7 +4,8 @@ $softgray: #ced4da;
 $dark: #343a40;
 $primary: #dfb38b;
 
-.board, .number-board {
+.board,
+.number-board {
   width: 360px;
   height: 360px;
   margin: 0 auto;
@@ -32,6 +33,7 @@ $primary: #dfb38b;
   margin-right: 3px;
   margin-bottom: 3px;
   float: left;
+  cursor: pointer;
 }
 
 .value {
@@ -39,6 +41,7 @@ $primary: #dfb38b;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
+  color: $dark;
 }
 
 .close-select {
@@ -67,8 +70,16 @@ $primary: #dfb38b;
   cursor: pointer;
 
 }
- 
-.hint-1, .hint-2, .hint-3, .hint-4, .hint-5, .hint-6, .hint-7, .hint-8, .hint-9 {
+
+.hint-1,
+.hint-2,
+.hint-3,
+.hint-4,
+.hint-5,
+.hint-6,
+.hint-7,
+.hint-8,
+.hint-9 {
   width: 6px;
   height: 6px;
   margin: 3px;
@@ -76,7 +87,15 @@ $primary: #dfb38b;
   border-radius: 50%;
 }
 
-.select-1, .select-2, .select-3, .select-4, .select-5, .select-6, .select-7, .select-8, .select-9 {
+.select-1,
+.select-2,
+.select-3,
+.select-4,
+.select-5,
+.select-6,
+.select-7,
+.select-8,
+.select-9 {
   width: 114px;
   height: 114px;
   line-height: 114px;
@@ -86,59 +105,109 @@ $primary: #dfb38b;
 }
 
 // Top left
-.hint-1, .select-1 {
+.hint-1,
+.select-1 {
   grid-row: 1;
   grid-column: 1;
 }
 
 // Top center
-.hint-2, .select-2 {
+.hint-2,
+.select-2 {
   grid-row: 1;
   grid-column: 2;
 }
 
 // Top right
-.hint-3, .select-3 {
+.hint-3,
+.select-3 {
   grid-row: 1;
   grid-column: 3;
 }
 
 // Middle left
-.hint-4, .select-4 {
+.hint-4,
+.select-4 {
   grid-row: 2;
   grid-column: 1;
 }
 
 // Middle center
-.hint-5, .select-5 {
+.hint-5,
+.select-5 {
   grid-row: 2;
   grid-column: 2;
 }
 
 // Middle right
-.hint-6, .select-6 {
+.hint-6,
+.select-6 {
   grid-row: 2;
   grid-column: 3;
 }
 
 // Bottom left
-.hint-7, .select-7 {
+.hint-7,
+.select-7 {
   grid-row: 3;
   grid-column: 1;
 }
 
 // Bottom center
-.hint-8, .select-8 {
+.hint-8,
+.select-8 {
   grid-row: 3;
   grid-column: 2;
 }
 
 // Bottom right
-.hint-9, .select-9 {
+.hint-9,
+.select-9 {
   grid-row: 3;
   grid-column: 3;
 }
 
 .text-center {
   text-align: center;
+}
+
+.clear-board {
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 6px solid $dark;
+  background: $lighter;
+}
+
+.clear-content p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: $dark;
+}
+
+.clear-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.clear-buttons button {
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: $dark;
+  color: $lighter;
+  border-radius: 0;
+  transition: opacity 0.2s;
+}
+
+.clear-buttons button:hover {
+  opacity: 0.8;
 }

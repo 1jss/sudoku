@@ -1,10 +1,11 @@
 <div class="text-center">
   <h1>Sudoku</h1>
 
-  <div class="board" *ngIf="!selectedMarker">
+  <div class="board" *ngIf="!selectedMarker && !markerToClear">
     <div
       *ngFor="let marker of markers"
       class="marker"
+      (click)="marker.value ? markerToClear = marker : null"
     >
       <div class="value" *ngIf="marker.value">{{ marker.value }}</div>
       <div class="hints" *ngIf="!marker.value" (click)="selectMarker(marker)"
@@ -169,10 +170,18 @@
       </div>
     </div>
   </div>
+  <div class="clear-board" *ngIf="markerToClear">
+    <div class="clear-content">
+      <p>Clear value?</p>
+      <div class="clear-buttons">
+        <button (click)="clearMarkerValue(markerToClear)">Clear</button>
+      </div>
+    </div>
+  </div>
   <div
     class="close-select"
-    *ngIf="selectedMarker"
-    (click)="selectMarker(undefined)"
+    *ngIf="selectedMarker || markerToClear"
+    (click)="selectedMarker ? selectMarker(undefined) : cancelClear()"
   >
     Close
   </div>

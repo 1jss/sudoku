@@ -19,7 +19,6 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'sv' }
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }

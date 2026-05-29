@@ -31,6 +31,8 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   selectedMarker: Marker | undefined = undefined;
+  markerToClear: Marker | undefined = undefined;
+
   selectMarker(marker: Marker | undefined) {
     this.selectedMarker = marker;
   }
@@ -41,7 +43,7 @@ export class HomeComponent implements OnInit {
   markers: Marker[] = [];
 
   setMarkerValue(value: number) {
-    if (!this.selectedMarker) {
+    if (!this.selectedMarker || value < 0 || value > 8) {
       return;
     }
     this.row[this.selectedMarker.row][value] = true;
@@ -56,15 +58,39 @@ export class HomeComponent implements OnInit {
     this.selectedMarker = undefined;
   }
 
+  clearMarkerValue(marker: Marker) {
+    if (!marker.value) {
+      return;
+    }
+
+    const value = marker.value - 1;
+    this.row[marker.row][value] = false;
+    this.col[marker.col][value] = false;
+    this.box[marker.box][value] = false;
+
+    this.markers = this.markers.map((m) => {
+      if (m === marker) {
+        return { ...m, value: undefined };
+      }
+      return m;
+    });
+
+    this.markerToClear = undefined;
+  }
+
+  cancelClear() {
+    this.markerToClear = undefined;
+  }
+
   ngOnInit(): void {
     for (let i = 0; i < 9; i++) {
       this.row.push(Array.from(EmptyNumberList));
       this.col.push(Array.from(EmptyNumberList));
       this.box.push(Array.from(EmptyNumberList));
       for (let j = 0; j < 9; j++) {
-        const boxCol = Math.floor(i / 3);
-        const boxRow = Math.floor(j / 3);
-        const box = boxCol * 3 + boxRow;
+        const boxRowIdx = Math.floor(i / 3);
+        const boxColIdx = Math.floor(j / 3);
+        const box = boxRowIdx * 3 + boxColIdx;
         this.markers.push({
           row: i,
           col: j,
